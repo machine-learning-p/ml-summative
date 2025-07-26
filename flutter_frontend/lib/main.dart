@@ -211,7 +211,7 @@ class _PredictionScreenState extends State<PredictionScreen> {
   final TextEditingController _banksController = TextEditingController();
 
   // Replace with your actual API endpoint
-  final String apiUrl = 'https://your-api-endpoint.com/predict';
+  final String apiUrl = 'https://ml-summative-xupo.onrender.com/predict';
 
   @override
   void initState() {
