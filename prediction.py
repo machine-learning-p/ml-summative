@@ -28,11 +28,11 @@ app.add_middleware(
 # Load models at startup (simplified)
 print("Loading models...")
 try:
-    model = joblib.load('./model/best_model.pkl')
-    scaler = joblib.load('./model/scaler.pkl')
-    le_countries = joblib.load('./model/le_countries.pkl')
-    le_banks = joblib.load('./model/le_banks.pkl')
-    feature_names = joblib.load('./model/feature_names.pkl')
+    model = joblib.load('./linear_regression/model/best_model.pkl')
+    scaler = joblib.load('./linear_regression/model/scaler.pkl')
+    le_countries = joblib.load('./linear_regression/model/le_countries.pkl')
+    le_banks = joblib.load('./linear_regression/model/le_banks.pkl')
+    feature_names = joblib.load('./linear_regression/model/feature_names.pkl')
     print("✅ All models loaded successfully!")
 except Exception as e:
     print(f"❌ Error loading models: {e}")
