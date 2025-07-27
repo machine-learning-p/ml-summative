@@ -1,4 +1,4 @@
-# Simple Dockerfile for WAEMU Banking Risk Assessment API
+# Simple Dockerfile for UEMOA Banking Risk Assessment API
 
 FROM python:3.11-slim
 

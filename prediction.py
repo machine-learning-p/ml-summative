@@ -1,10 +1,6 @@
 """
-Prediction API for WAEMU Banking Risk Assessment
+Prediction API for UEMOA Banking Risk Assessment
 """
-
-
-# FastAPI Banking Risk Prediction API - Simplified for Render
-# prediction.py
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -15,7 +11,7 @@ import os
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="🏦 WAEMU Banking Risk Assessment API",
+    title="🏦 UEMOA Banking Risk Assessment API",
     description="Predict bank financial health (Z-score) in West African Economic and Monetary Union",
     version="1.0.0"
 )
@@ -32,11 +28,11 @@ app.add_middleware(
 # Load models at startup (simplified)
 print("Loading models...")
 try:
-    model = joblib.load('best_model.pkl')
-    scaler = joblib.load('scaler.pkl')
-    le_countries = joblib.load('le_countries.pkl')
-    le_banks = joblib.load('le_banks.pkl')
-    feature_names = joblib.load('feature_names.pkl')
+    model = joblib.load('./model/best_model.pkl')
+    scaler = joblib.load('./model/scaler.pkl')
+    le_countries = joblib.load('./model/le_countries.pkl')
+    le_banks = joblib.load('./model/le_banks.pkl')
+    feature_names = joblib.load('./model/feature_names.pkl')
     print("✅ All models loaded successfully!")
 except Exception as e:
     print(f"❌ Error loading models: {e}")
@@ -65,7 +61,7 @@ class BankingData(BaseModel):
 @app.get("/")
 def root():
     return {
-        "message": "🏦 WAEMU Banking Risk Assessment API",
+        "message": "🏦 UEMOA Banking Risk Assessment API",
         "status": "running",
         "version": "1.0.0",
         "endpoints": {
@@ -156,7 +152,7 @@ class BankingData(BaseModel):
         ..., 
         ge=1, 
         le=8, 
-        description="Country numeric code (1-8 for WAEMU countries)"
+        description="Country numeric code (1-8 for UEMOA countries)"
     )
     
     year: int = Field(
@@ -278,7 +274,7 @@ class PredictionResponse(BaseModel):
 async def root():
     """Root endpoint with API information"""
     return {
-        "message": "🏦 WAEMU Banking Risk Assessment API",
+        "message": "🏦 UEMOA Banking Risk Assessment API",
         "version": "1.0.0",
         "description": "Predict bank financial health in West African Economic and Monetary Union",
         "endpoints": {

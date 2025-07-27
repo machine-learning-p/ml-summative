@@ -2,7 +2,7 @@
 
 services:
   - type: web
-    name: waemu-banking-api
+    name: UEMOA-banking-api
     env: docker
     dockerfilePath: ./Dockerfile
     dockerContext: ./API
